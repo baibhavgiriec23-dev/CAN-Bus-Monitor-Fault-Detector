@@ -1,0 +1,23 @@
+CAN MONITOR — EXPECTED SIMULATION RESULT
+=========================================
+Test frame: Standard CAN 2.0A data frame
+Identifier: 0x123
+DLC:        4
+Payload:    DE AD BE EF
+CRC-15:     0x4E6B
+Raw bits through CRC: 66
+Inserted stuff bits: 2
+Wire-level frame including CRC delimiter, ACK, ACK delimiter and EOF: 78 bits
+
+Expected decoder output:
+Frame ID    : 0x123
+DLC         : 4
+DATA        : 0x00000000DEADBEEF
+CRC error   : 0
+Stuff error : 0
+Format error: 0
+
+NOTE:
+This repository is a simulation/reference implementation. No physical CAN
+transceiver or FPGA board was used for the project artifact prepared here.
+The testbench drives an already-sampled digital CAN RX bitstream.
